@@ -43,6 +43,7 @@ ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 
 const setInWindow = require('setInWindow');
 const injectScript = require('injectScript');
+const encodeUriComponent = require('encodeUriComponent');
 
 const UserLeap = function(){UserLeap._queue.push(arguments);};
 
@@ -50,9 +51,7 @@ setInWindow('UserLeap', UserLeap);
 setInWindow('UserLeap.appId', data.envId);
 setInWindow('UserLeap._queue', []);
 
-injectScript('https://cdn.userleap.com/shim.js?id='+data.envId);
-
-data.gtmOnSuccess();
+injectScript('https://cdn.userleap.com/shim.js?'+encodeUriComponent('id='+data.envId), data.gtmOnSuccess, data.gtmOnFailure);
 
 
 ___WEB_PERMISSIONS___
@@ -233,6 +232,6 @@ scenarios: []
 
 ___NOTES___
 
-Created on 4/10/2020, 6:34:03 PM
+Created on 5/19/2020, 2:17:49 PM
 
 
