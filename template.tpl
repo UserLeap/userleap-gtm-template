@@ -34,7 +34,12 @@ ___TEMPLATE_PARAMETERS___
     "type": "TEXT",
     "name": "envId",
     "displayName": "Environment ID",
-    "simpleValueType": true
+    "simpleValueType": true,
+    "valueValidators": [
+      {
+        "type": "NON_EMPTY"
+      }
+    ]
   }
 ]
 
@@ -51,7 +56,7 @@ setInWindow('UserLeap', UserLeap);
 setInWindow('UserLeap.appId', data.envId);
 setInWindow('UserLeap._queue', []);
 
-injectScript('https://cdn.userleap.com/shim.js?'+encodeUriComponent('id='+data.envId), data.gtmOnSuccess, data.gtmOnFailure);
+injectScript('https://cdn.userleap.com/shim.js?id='+encodeUriComponent(data.envId), data.gtmOnSuccess, data.gtmOnFailure);
 
 
 ___WEB_PERMISSIONS___
@@ -232,6 +237,6 @@ scenarios: []
 
 ___NOTES___
 
-Created on 5/19/2020, 2:17:49 PM
+Created on 5/28/2020, 7:49:29 PM
 
 
