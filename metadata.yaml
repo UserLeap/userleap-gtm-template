@@ -1,5 +1,5 @@
 homepage: "https://www.userleap.com"
 documentation: "https://docs.userleap.com"
 versions:
-  - sha: 7e1ccb771809178987539f428b268c6c120c22ac
+  - sha: 5e6a819cb34fab3c3c0cc8bc954eb1d0e89b160e
     changeNotes: Initial release.
